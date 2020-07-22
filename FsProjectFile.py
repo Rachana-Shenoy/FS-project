@@ -1,6 +1,6 @@
 import csv
-# info abt fields of record and the file where records are stored
-employee_fields = ['empID', 'name', 'age', 'email', 'phone','gender','dept','salary']
+#fields of record and the file where records are stored
+employee_fields = ['empID', 'name', 'DOB', 'skills','dept','salary', 'projects','workexp']
 employee_fileSystem = 'temp.txt'
 def display_menu():
     print("--------------------------------------")
@@ -69,12 +69,12 @@ def search_employee():
                     print("----- Employee Found -----")
                     print("EmpId: ", row[0])
                     print("Name: ", row[1])
-                    print("Age: ", row[2])
-                    print("Email: ", row[3])
-                    print("Phone: ", row[4])
-                    print("Gender: ", row[5])
-                    print("Department: ", row[6])
-                    print("Salary: ", row[7])
+                    print("DOB: ", row[2])
+                    print("Skills: ", row[3])
+                    print("Department: ", row[4])
+                    print("Salary: ", row[5])
+                    print("Projects: ", row[6])
+                    print("Work Experience: ", row[7])
                     break
         else:
             print("Emp Id not found in the file")
