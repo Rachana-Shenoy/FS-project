@@ -1,6 +1,6 @@
 import csv
-#fields of record and the file where records are stored
-employee_fields = ['empID', 'name', 'age', 'email', 'phone','gender']
+# info abt fields of record and the file where records are stored
+employee_fields = ['empID', 'name', 'age', 'email', 'phone','gender','dept','salary']
 employee_fileSystem = 'temp.txt'
 def display_menu():
     print("--------------------------------------")
@@ -40,12 +40,12 @@ def view_employees():
     global employee_fileSystem
 
     print("--- Employee Records ---")
-
+    print("\n")
     with open(employee_fileSystem, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         for x in employee_fields:
             print(x, end='\t   |')
-        print("\n------------------------------------------------------------------------------------")
+        print("\n--------------------------------------------------------------------------------------------------------------------")
 
         for row in reader:
             for item in row:
@@ -73,10 +73,14 @@ def search_employee():
                     print("Email: ", row[3])
                     print("Phone: ", row[4])
                     print("Gender: ", row[5])
+                    print("Department: ", row[6])
+                    print("Salary: ", row[7])
                     break
         else:
             print("Emp Id not found in the file")
     input("Press any key to continue")
+
+
 
 #modify employee details
 def update_employee():
